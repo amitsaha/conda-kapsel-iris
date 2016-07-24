@@ -1,0 +1,61 @@
+# This is an Anaconda project file.
+#
+# Here you can describe your project and how to run it.
+# Use `conda-kapsel run` to run the project.
+# The file is in YAML format, please see http://www.yaml.org/start.html for more.
+#
+
+#
+# Set the 'name' key to name your project
+#
+name:
+#
+# Set the 'icon' key to give your project an icon
+#
+icon:
+#
+# In the commands section, list your runnable scripts, notebooks, and other code.
+# Use `conda-kapsel add-command` to add commands.
+#
+commands: {hello: {env_spec: default, unix: python hello.py}, showdata: {env_spec: default,
+    unix: python showdata.py}, plot: {bokeh_app: iris_plot, env_spec: default}}
+#
+# In the variables section, list any environment variables your code depends on.
+# Use `conda-kapsel add-variable` to add variables.
+#
+variables: {COLUMN_TO_SHOW: sepal_width}
+#
+# In the services section, list any services that should be
+# available before your code runs.
+# Use `conda-kapsel add-service` to add services.
+#
+services: {}
+#
+# In the downloads section, list any URLs to download to local files
+# before your code runs.
+# Use `conda-kapsel add-download` to add downloads.
+#
+downloads: {IRIS_CSV: {url: 'https://raw.githubusercontent.com/bokeh/bokeh/f9aa6a8caae8c7c12efd32be95ec7b0216f62203/bokeh/sampledata/iris.csv'}}
+#
+# In the packages section, list any packages that must be installed
+# before your code runs.
+# Use `conda-kapsel add-packages` to add packages.
+#
+packages: [bokeh=0.12, pandas]
+#
+# In the channels section, list any Conda channel URLs to be searched
+# for packages.
+#
+# For example,
+#
+# channels:
+#    - https://conda.anaconda.org/asmeurer
+#
+channels: []
+#
+# If you like, you can define multiple, named environment specs.
+# There's an implicit environment spec called 'default', which you can
+# tune by naming it explicitly here.
+# Use `conda-kapsel add-env-spec` to add environment specs.
+#
+env_specs: {}
